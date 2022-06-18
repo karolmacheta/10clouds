@@ -16,7 +16,8 @@
     "url": "https://github.com/karolmacheta/10clouds/issues"
   },
   "homepage": "https://github.com/karolmacheta/10clouds#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "cypress": "^10.1.0"
   }
 }
