@@ -15,5 +15,4 @@ describe('QA Tasks', () => {
     cy.get('.job-offers__header-title').should('be.visible');
     cy.get('.job-offer__title').contains('QA Automation Engineer').should('have.length', 1);
   });
-
 });
