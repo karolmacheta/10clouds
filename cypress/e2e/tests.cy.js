@@ -1,4 +1,4 @@
-import { mainPage } from "../../locators/mainPage.js"
+import { mainPage } from "../locators/mainPage.js"
 
 describe('QA Tasks', () => {
   it('checks the swapi for Darth Vader name in people/4', () => {
@@ -11,10 +11,10 @@ describe('QA Tasks', () => {
 
   it('checks /careers for one QA entry', () => {
     cy.visit('https://10clouds.com/');
-    cy.get('.nav-link-container [href="/careers/"] span').should('be.visible').click();
+    cy.get(mainPage.careersBtn).should('be.visible').click({force: true});
     //cy.get('.nav-link-container [href="/careers/"] span').click(); 
     cy.url().should('eq', 'https://10clouds.com/careers/');
-    cy.get('.job-offers__header-title').should('be.visible');
-    cy.get('.job-offer__title').contains('QA Automation Engineer').should('have.length', 1);
+    cy.get(mainPage.careersPageHeader).should('be.visible');
+    cy.get(mainPage.jobTitle).contains('QA Automation Engineer').should('have.length', 1);
   });
 });
