@@ -1,4 +1,5 @@
 Tests for a QA Task from 10clouds
+(Instructions in https://github.com/karolmacheta/10clouds/blob/master/QA_Task__2_.pdf)
 
 ## Cypress Documentation:
 
@@ -37,4 +38,4 @@ https://download.cypress.io/desktop
 4. Select Google Chrome as the browser and start file from repo:
  cypress\e2e
 
-![alt text](https://github.com/karolmacheta/10clouds/blob/main/tests.jpg)
+![alt text](https://github.com/karolmacheta/10clouds/blob/master/tests.jpg)
