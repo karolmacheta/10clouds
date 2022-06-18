@@ -1,10 +1,13 @@
 describe('QA Tasks', () => {
   beforeEach(() => {
-    cy.visit('https://10clouds.com/')
+    
   });
 
   it('checks careers for one QA entry', () => {
-    cy.get('.navigation [href="/careers/"] span').click();
+    cy.visit('https://10clouds.com/');
+    cy.get('.nav-link-container [href="/careers/"] span').click(); 
+    // cy.get('.nav-link-container span').contains('Careers').click();
+    cy.url().should('eq', 'https://10clouds.com/careers/');
     cy.get('.job-offer__title').contains('QA Automation Engineer').should('have.length', 1)
   });
 
