@@ -1,0 +1,22 @@
+{
+  "name": "10clouds",
+  "version": "1.0.0",
+  "description": "qaTask",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karolmacheta/10clouds.git"
+  },
+  "author": "KarolMacheta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karolmacheta/10clouds/issues"
+  },
+  "homepage": "https://github.com/karolmacheta/10clouds#readme",
+  "devDependencies": {
+    "cypress": "^10.1.0"
+  }
+}
