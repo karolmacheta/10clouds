@@ -25,11 +25,12 @@ describe('QA Tasks', () => {
   it('checks /careers departments dropdown for qa', () => {
     cy.get(mainPage.careersBtn).should('be.visible').click({force: true});
     cy.url().should('eq', 'https://10clouds.com/careers/');
-    cy.wait(2000);
+    cy.wait(200);
     cy.get(mainPage.careersPageHeader).scrollIntoView();
+    cy.wait(200);
     cy.get(mainPage.jobDepartmentDDbtns).contains('All departments').scrollIntoView();
     cy.get(mainPage.jobDepartmentDDbtns).contains('All departments').should('be.visible').click({force:true});
-    cy.wait(100);
+    cy.wait(200);
     cy.get(mainPage.jobDepartmentDDselect).contains('QA').should('be.visible').click();
     cy.get(mainPage.jobTitle).each((item) => {
       cy.wrap(item).as('text');
