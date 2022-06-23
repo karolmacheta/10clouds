@@ -2,7 +2,7 @@ import { mainPage } from "../locators/mainPage.js"
 
 describe('QA Tasks', () => {
   it('checks the swapi for Darth Vader name in people/4', () => {
-    cy.request('GET', 'https://swapi.dev/api/people/4/',).then(
+    cy.request('GET', 'https://swapi.dev/api/people/4/').then(
       (response) => {
         expect(response.body).to.have.property('name', 'Darth Vader');
       }
@@ -11,13 +11,14 @@ describe('QA Tasks', () => {
 
   it('checks the swapi for 404 from people/400', () => {
     cy.request(
-      { 
+      {
         url: 'https://swapi.dev/api/people/400/',
-        failOnStatusCode: false,}).then(
-      (response) => {
-        expect(response.status).to.eq(404);
-      }
-    )
+        failOnStatusCode: false,
+      }).then(
+        (response) => {
+          expect(response.status).to.eq(404);
+        }
+      )
   });
 
   beforeEach(() => {
