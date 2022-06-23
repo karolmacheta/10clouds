@@ -9,6 +9,18 @@ describe('QA Tasks', () => {
     )
   });
 
+  it('checks the swapi for 404 from people/400', () => {
+    cy.request(
+      {
+        url: 'https://swapi.dev/api/people/400/',
+        failOnStatusCode: false,
+      }).then(
+        (response) => {
+          expect(response.status).to.eq(404);
+        }
+      )
+  });
+
   beforeEach(() => {
     cy.visit('https://10clouds.com/');
   })
@@ -25,7 +37,9 @@ describe('QA Tasks', () => {
     cy.url().should('eq', 'https://10clouds.com/careers/');
     cy.get(mainPage.careersPageHeader).scrollIntoView();
     cy.get(mainPage.jobDepartmentDDbtns).contains('All departments').scrollIntoView();
+    cy.wait(2000);  //Time waits are not optimal in Cypress but otherwise the elements get detached from DOM, not enough time to investigate
     cy.get(mainPage.jobDepartmentDDbtns).contains('All departments').should('be.visible').click({ force: true });
+    cy.wait(2000); // Same as above
     cy.get(mainPage.jobDepartmentDDselect).contains('QA').should('be.visible').click();
     cy.get(mainPage.jobTitle).each((item) => {
       cy.wrap(item).as('text');
